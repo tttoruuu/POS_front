@@ -43,7 +43,7 @@ export default function Home() {
     try {
       const res = await axios.get<Product>(`http://localhost:8000/api/products/${code}`);
       setProduct(res.data);
-    } catch (e) {
+    } catch {
       setError('商品が見つかりません');
     }
   };
@@ -105,7 +105,7 @@ export default function Home() {
       } else {
          setError('購入処理に失敗しました');
       }
-    } catch (e) {
+    } catch {
        setError('購入処理に失敗しました');
     }
   };
